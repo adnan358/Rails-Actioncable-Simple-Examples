@@ -1,0 +1,41 @@
+<div class="app">
+	<div class="container-fluid">
+		<div class="col-md-10">
+			<ul class="list-group" style="list-style: none; width: %100;">
+				<template v-for="message in messages">
+					<li class="list-group-item">{{ message.user }} >> {{ message.data }}</li>
+				</template>
+			</ul>
+		</div>
+		
+		<div class="col-md-2">
+			<h4 class="text-center">Online Users</h4>
+			<hr>
+			<ul style="font-size: 19px; list-style: none;">
+				<template v-for="list in online_list">
+					<li>{{ list }}</li>
+				</template>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<form v-on:submit.prevent="send_message">
+			<div class="navbar navbar-fixed-bottom">
+				<div class="container-fluid">
+					<div class="input-group">
+							<input type="text" v-model="message" style="height: 40px; font-size: 20px" placeholder="Message your write in here" class="form-control">
+							<div class="input-group-btn">
+								<button class="btn" style="height: 40px;">
+									Send
+								</button>
+							</div>
+					</div>
+				</div> 
+			</div>
+		</form>
+	</div>
+</div>
+
+<script src="https://unpkg.com/vue@2.5.11/dist/vue.js"></script>
+<%= javascript_include_tag 'action_cable_generator', 'data-turbolinks-track': 'reload' %>

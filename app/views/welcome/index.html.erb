@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>Rails & Vue Chat</h1>
+		</div>
+	</div>
+	<hr>
+	<%= form_tag create_room_path, method: :post, autocomplete: 'off' do |f| %>
+		<div class="row text-center">
+			<div class="col-md-5 centered">
+				<label for="room_name">Oda İsmini Giriniz:</label>
+				<input type="text" required name="room_name" id="room_name" placeholder="Oda adını giriniz." class="form-control text-center" style="height: 50px; font-size: 25px; border-radius: 5px">
+			</div>
+
+			<div class="row text-center" style="margin-top: 20px">
+				<div class="col-md-5 centered">
+					<label for="nickname">Takma Adınızı Giriniz.</label>
+					<input type="text" required name="nick_name" placeholder="Takma Adınız." class="form-control text-center" style="height: 50px; font-size: 25px; border-radius: 5px">
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 20px;">
+				<div class="col-md-5 centered">
+					<button class="btn btn-lg btn-success" style="width: 200px"><b>Oluştur</b></button>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
